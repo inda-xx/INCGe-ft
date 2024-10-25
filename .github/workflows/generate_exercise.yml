@@ -75,7 +75,7 @@ jobs:
       - name: Generate task description
         id: generate-task-description
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.FINE_TUNED_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TASK_LANGUAGE: ${{ github.event.inputs.language }}
           NUMBER_OF_EXERCISES: ${{ github.event.inputs.number_of_exercises }}
@@ -86,7 +86,7 @@ jobs:
           EXERCISE_4_DETAILS: ${{ github.event.inputs.exercise_4_details || '' }}
           EXERCISE_5_DETAILS: ${{ github.event.inputs.exercise_5_details || '' }}
         run: |
-          python scripts/exercise_description.py "${{ secrets.OPENAI_TOKEN }}" "${{ github.event.inputs.number_of_exercises }}" "${{ github.event.inputs.language }}" "${{ github.event.inputs.programming_language }}" \
+          python scripts/exercise_description.py "${{ secrets.FINE_TUNED_KEY }}" "${{ github.event.inputs.number_of_exercises }}" "${{ github.event.inputs.language }}" "${{ github.event.inputs.programming_language }}" \
           "${{ github.event.inputs.exercise_1_details }}" "${{ github.event.inputs.exercise_2_details }}" \
           "${{ github.event.inputs.exercise_3_details }}" "${{ github.event.inputs.exercise_4_details }}" \
           "${{ github.event.inputs.exercise_5_details }}"
