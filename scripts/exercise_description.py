@@ -112,7 +112,6 @@ def generate_task_description(api_key, number_of_exercises, language, programmin
         {
             "role": "user",
             "content": f"Create {number_of_exercises} exercises in {programming_language}."
-                       f"This weeks general task goals are these learning goals:\n\n{learning_goals}\n\n, take these into consideration in the background but they should not dominate the exercises."
                        "Each exercise should follow the provided details:\n\n" +
                        "\n".join(exercise_details_formatted) +
                        "\n\nDesign these exercises to be challenging and to encourage the students to apply critical thinking and problem-solving skills."
