@@ -10,8 +10,8 @@ learning_goals = """
     {
         "main_point": "Using Documentation",
         "sub_points": [
-            "Description: This concept emphasizes the importance of using documentation to understand and implement Java classes and libraries effectively. Mastery of documentation is crucial for solving programming problems and enhancing code quality.",
-            "Subpoint 1: Navigating official Java documentation and API references.",
+            "Description: This concept emphasizes the importance of using documentation to understand and implement classes and libraries effectively. Mastery of documentation is crucial for solving programming problems and enhancing code quality.",
+            "Subpoint 1: Navigating official documentation and API references.",
             "Subpoint 2: Understanding code examples and integrating them into projects.",
             "Subpoint 3: Leveraging community resources and forums for additional insights."
         ]
@@ -19,7 +19,7 @@ learning_goals = """
     {
         "main_point": "Reading from a Text File",
         "sub_points": [
-            "Description: This concept introduces file I/O operations in Java, focusing on reading data from text files. Understanding file reading is essential for applications that require data persistence and external data processing.",
+            "Description: This concept introduces file I/O operations in, focusing on reading data from text files. Understanding file reading is essential for applications that require data persistence and external data processing.",
             "Subpoint 1: Setting up file paths and understanding file streams.",
             "Subpoint 2: Using classes like FileReader and BufferedReader for efficient file reading.",
             "Subpoint 3: Handling exceptions and ensuring resource management with try-with-resources."
@@ -28,7 +28,7 @@ learning_goals = """
     {
         "main_point": "Using the HashMap Class",
         "sub_points": [
-            "Description: This concept explores the HashMap class, a powerful collection for storing key-value pairs. Mastery of HashMap is important for efficient data retrieval and manipulation in Java applications.",
+            "Description: This concept explores the HashMap class, a powerful collection for storing key-value pairs. Mastery of HashMap is important for efficient data retrieval and manipulation in applications.",
             "Subpoint 1: Creating and initializing a HashMap with generic types.",
             "Subpoint 2: Performing operations such as adding, removing, and accessing key-value pairs.",
             "Subpoint 3: Understanding hash functions and handling collisions for optimal performance."
@@ -106,11 +106,13 @@ def generate_task_description(api_key, number_of_exercises, language, programmin
             "content": (
                 "You are an experienced programming instructor creating a set of exercises for a university-level programming lab. "
                 "These exercises should be challenging, pedagogically valuable, and focused on skill development in the specified programming language."
+                "Provide very brief code snippets in the exercise as small hints and guides in the chosen language. The snippets should in no way reveal the answer but provide a slight structure to tackle the task."
             )
         },
         {
             "role": "user",
-            "content": f"Create {number_of_exercises} exercises in {programming_language} that align with these learning goals:\n\n{learning_goals}\n\n"
+            "content": f"Create {number_of_exercises} exercises in {programming_language}."
+                       f"This weeks general task goals are these learning goals:\n\n{learning_goals}\n\n, take these into consideration in the background but they should not dominate the exercises."
                        "Each exercise should follow the provided details:\n\n" +
                        "\n".join(exercise_details_formatted) +
                        "\n\nDesign these exercises to be challenging and to encourage the students to apply critical thinking and problem-solving skills."
