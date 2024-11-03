@@ -2,39 +2,6 @@ import os
 import sys
 import openai
 
-learning_goals = """
-* Using Documentation
-* Reading from a Text File
-* Using the HashMap Class
-
-    {
-        "main_point": "Using Documentation",
-        "sub_points": [
-            "Description: This concept emphasizes the importance of using documentation to understand and implement classes and libraries effectively. Mastery of documentation is crucial for solving programming problems and enhancing code quality.",
-            "Subpoint 1: Navigating official documentation and API references.",
-            "Subpoint 2: Understanding code examples and integrating them into projects.",
-            "Subpoint 3: Leveraging community resources and forums for additional insights."
-        ]
-    },
-    {
-        "main_point": "Reading from a Text File",
-        "sub_points": [
-            "Description: This concept introduces file I/O operations in, focusing on reading data from text files. Understanding file reading is essential for applications that require data persistence and external data processing.",
-            "Subpoint 1: Setting up file paths and understanding file streams.",
-            "Subpoint 2: Using classes like FileReader and BufferedReader for efficient file reading.",
-            "Subpoint 3: Handling exceptions and ensuring resource management with try-with-resources."
-        ]
-    },
-    {
-        "main_point": "Using the HashMap Class",
-        "sub_points": [
-            "Description: This concept explores the HashMap class, a powerful collection for storing key-value pairs. Mastery of HashMap is important for efficient data retrieval and manipulation in applications.",
-            "Subpoint 1: Creating and initializing a HashMap with generic types.",
-            "Subpoint 2: Performing operations such as adding, removing, and accessing key-value pairs.",
-            "Subpoint 3: Understanding hash functions and handling collisions for optimal performance."
-        ]
-    }
-"""
 
 def generate_with_retries(client, messages, max_retries=3):
     for attempt in range(max_retries):
