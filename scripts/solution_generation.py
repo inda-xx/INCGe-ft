@@ -6,7 +6,7 @@ def generate_with_retries(client, messages, max_retries=3):
     for attempt in range(max_retries):
         try:
             response = client.chat.completions.create(
-                model="o1-mini-2024-09-12",
+                model="gpt-4o-2024-05-13",
                 messages=messages
             )
             return response.choices[0].message.content.strip()
@@ -23,7 +23,7 @@ def generate_solution(api_key, branch_name):
 
     openai.api_key = api_key
 
-    # Load the task description
+    # Task description
     task_file = f"tasks/new_task.md"
     if not os.path.exists(task_file):
         print(f"Error: Task description not found at {task_file}")
@@ -32,7 +32,7 @@ def generate_solution(api_key, branch_name):
     with open(task_file, "r") as f:
         task_description = f.read()
 
-    # Create messages for chat model
+    # Messages for chat model
     messages = [
         {
             "role": "system",
