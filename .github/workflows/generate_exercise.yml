@@ -27,23 +27,23 @@ on:
                   - 5
                 default: '3'
             exercise_1_details:
-                description: 'Details for Exercise 1 (e.g., "medium,Loops, Arrays, Subject of Exercise 1")'
+                description: 'Details for Exercise 1 (e.g., "medium,Loops, Arrays, Create a function to reverse an array")'
                 required: true
-                default: 'medium,Loops, Arrays, Subject of Exercise 1'
+                default: 'medium,Loops, Arrays, Create a function to reverse an array'
             exercise_2_details:
-                description: 'Details for Exercise 2 (optional, e.g., "hard,Recursion, Subject of Exercise 2")'
+                description: 'Details for Exercise 2 (optional, e.g., "hard,Recursion, Implement a recursive factorial function")'
                 required: false
                 default: ''
             exercise_3_details:
-                description: 'Details for Exercise 3 (optional, e.g., "simple,Strings, Subject of Exercise 3")'
+                description: 'Details for Exercise 3 (optional, e.g., "simple,Strings, Convert a string to uppercase")'
                 required: false
                 default: ''
             exercise_4_details:
-                description: 'Details for Exercise 4 (optional, e.g., "v.hard,HashMaps, Subject of Exercise 4")'
+                description: 'Details for Exercise 4 (optional, e.g., "v.hard,HashMaps, Build a key-value store")'
                 required: false
                 default: ''
             exercise_5_details:
-                description: 'Details for Exercise 5 (optional, e.g., "medium,File I/O, Subject of Exercise 5")'
+                description: 'Details for Exercise 5 (optional, e.g., "medium,File I/O, Read data from a CSV file")'
                 required: false
                 default: ''
             branch_name:
@@ -86,7 +86,7 @@ jobs:
           EXERCISE_4_DETAILS: ${{ github.event.inputs.exercise_4_details || '' }}
           EXERCISE_5_DETAILS: ${{ github.event.inputs.exercise_5_details || '' }}
         run: |
-          python scripts/exercise_description.py "${{ secrets.FINE_TUNED_KEY }}" "${{ github.event.inputs.number_of_exercises }}" "${{ github.event.inputs.language }}" "${{ github.event.inputs.programming_language }}" \
+          python scripts/exercise_description.py "${{ secrets.FINE_TUNED_KEY }}" "${{ github.event.inputs.number_of_exercises }}" "${{ github.event.inputs.language }}" "${{ github.event.inputs.language }}" \
           "${{ github.event.inputs.exercise_1_details }}" "${{ github.event.inputs.exercise_2_details }}" \
           "${{ github.event.inputs.exercise_3_details }}" "${{ github.event.inputs.exercise_4_details }}" \
           "${{ github.event.inputs.exercise_5_details }}"
